@@ -265,71 +265,124 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-          <div class="col-md-12">
-              <table>
-                  <tr>
-                      <td>
-                          <button type="button" class="btn btn-block btn-danger">批量删除</button>
-                      </td>
-                      <td>
-                          <button type="button" class="btn btn-block btn-primary">添加图片</button>
-                      </td>
-                  </tr>
-              </table>
-          </div>
-          <div class="col-md-12">
-          <div class="box">
-
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table class="table table-bordered">
-                <tr>
-                  <th style="width: 10px">
-                    <input type="checkbox" name="" id="">
-                  </th>
-                  <th>ID</th>
-                  <th>分类</th>
-                  <th>封面</th>
-                  <th>图片名称</th>
-                  <th>Tags</th>
-                  <th>更新时间</th>
-                  <th>发布状态</th>
-                  <th>操作</th>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="checkbox" name="" id="">
-                  </td>
-                  <td>1.</td>
-                  <td>1.</td>
-                  <td>1.</td>
-                  <td>1.</td>
-                  <td>1.</td>
-                  <td>1.</td>
-                  <td>1.</td>
-                  <td>
-                    <a class="fa fa-edit" href=""></a>
-                    <a class="fa fa-save" href=""></a>
-                    <a class="fa fa-trash-o" href=""></a>
-                  </td>
-                </tr>
-
-              </table>
+        <form class="form form-horizontal" id="form-article-add">
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片标题：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="" id="" name="">
+              </div>
             </div>
-            <!-- /.box-body -->
-            <div class="box-footer clearfix">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&raquo;</a></li>
-              </ul>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">简略标题：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="" id="" name="">
+              </div>
             </div>
-          </div>
-          <!-- /.box -->
-
-        </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+				<select name="" class="select">
+					<option value="0">全部栏目</option>
+					<option value="1">新闻资讯</option>
+					<option value="11">├行业动态</option>
+					<option value="12">├行业资讯</option>
+					<option value="13">├行业新闻</option>
+				</select>
+				</span>
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">排序值：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="0" placeholder="" id="" name="">
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">允许评论：</label>
+              <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                <div class="check-box">
+                  <div class="icheckbox-blue"><input type="checkbox" id="checkbox-1" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                  <label for="checkbox-1">&nbsp;</label>
+                </div>
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>发布日期：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate">
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>结束日期：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' })" id="datemax" class="input-text Wdate">
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">图片作者：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="0" placeholder="" id="" name="">
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">图片来源：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="0" placeholder="" id="" name="">
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">关键词：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="0" placeholder="" id="" name="">
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">图片摘要：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="" cols="" rows="" class="textarea" placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onkeyup="$.Huitextarealength(this,200)"></textarea>
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">缩略图：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <div class="uploader-thum-container">
+                  <div id="fileList" class="uploader-list"></div>
+                  <div id="filePicker"><div class="webuploader-pick">选择图片</div></div>
+                  <button id="btn-star" class="btn btn-default btn-uploadstar radius ml-10">开始上传</button>
+                </div>
+              </div>
+            </div>
+            <div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <div class="uploader-list-container">
+                  <div class="queueList">
+                    <div id="dndArea" class="placeholder">
+                      <div id="filePicker-2" class="webuploader-container"><div class="webuploader-pick">点击选择图片</div><div id="rt_rt_1bok2c0ss16if1ifdkqtef7l756" style="position: absolute; top: 20px; left: 0px; width: 168px; height: 44px; overflow: hidden; bottom: auto; right: auto;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div></div>
+                      <p>或将照片拖到这里，单次最多可选300张</p>
+                    </div>
+                    <ul class="filelist"></ul></div>
+                  <div class="statusBar" style="display:none;">
+                    <div class="progress" style="display: none;"> <span class="text">0%</span> <span class="percentage" style="width: 0%;"></span> </div>
+                    <div class="info">共0张（0B），已上传0张</div>
+                    <div class="btns">
+                      <div id="filePicker2" class="webuploader-container"><div class="webuploader-pick">继续添加</div><div id="rt_rt_1bok2c0ss12bii731fkcs5q1lt59" style="position: absolute; top: 0px; left: 0px; width: 38px; height: 2px; overflow: hidden; bottom: auto; right: auto;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div></div>
+                      <div class="uploadBtn state-pedding">开始上传</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row cl">
+              <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <button onclick="article_save_submit();" class="btn btn-primary radius" type="button"><i class="Hui-iconfont"></i> 保存并提交审核</button>
+                <button onclick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont"></i> 保存草稿</button>
+                <button onclick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+              </div>
+            </div>
+          </form>
       </div>
       <!-- /.row -->
     </section>
